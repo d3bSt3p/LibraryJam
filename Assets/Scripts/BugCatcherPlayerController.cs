@@ -36,6 +36,11 @@ public class BugCatcherPlayerController : MonoBehaviour
     public void OnMove(InputValue value) => _moveInput = value.Get<Vector2>();
     public void OnLook(InputValue value) => _lookInput = value.Get<Vector2>();
 
+    public void CatchBug(GameObject bugObject)
+    {
+        Debug.Log("Raycast hit bug!");
+        Destroy(bugObject);
+    }
 
     void Update()
     {
@@ -59,12 +64,12 @@ public class BugCatcherPlayerController : MonoBehaviour
             LayerMask everythingButPlayerMask = ~playerMask;
             RaycastHit hitInfo;
 
-            bool hitSuccess = Physics.Raycast(transform.position, cameraTransform.TransformDirection(Vector3.forward), out hitInfo, BugCatchingRaycastDistance, everythingButPlayerMask);
-
-            if (hitSuccess) 
-            {
-                Debug.DrawRay(transform.position, cameraTransform.TransformDirection(Vector3.forward) * BugCatchingRaycastDistance, Color.yellow);
-                Debug.Log("Raycast hit " + hitInfo.transform.gameObject.name);
+            bool hitSomething = Physics.Raycast(cameraTransform.position, cameraTransform.TransformDirection(Vector3.forward), out hitInfo, BugCatchingRaycastDistance, everythingButPlayerMask);
+            GameObject bugObject = hitSomething ? hitInfo.transform.gameObject : null;
+            if (bugObject != null && bugObject.CompareTag("FreeBug")) 
+            { 
+                Debug.DrawRay(cameraTransform.position, cameraTransform.TransformDirection(Vector3.forward) * hitInfo.distance, Color.yellow, 2f);
+                CatchBug(bugObject);
             }
         }
     }
