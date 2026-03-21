@@ -1,5 +1,8 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
@@ -9,6 +12,13 @@ public class BugCatcherPlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float lookSensitivity = 0.1f;
     public Transform cameraTransform;
+
+    [SerializeField]
+    Image bugCaughtImage;
+    [SerializeField]
+    AudioSource audioSource;
+    [SerializeField]
+    AudioClip bugSavedAudioClip;
 
     private CharacterController _controller;
     private Vector2 _moveInput;
@@ -36,10 +46,20 @@ public class BugCatcherPlayerController : MonoBehaviour
     public void OnMove(InputValue value) => _moveInput = value.Get<Vector2>();
     public void OnLook(InputValue value) => _lookInput = value.Get<Vector2>();
 
-    public void CatchBug(GameObject bugObject)
+    private void CatchBug(GameObject bugObject)
     {
         Debug.Log("Raycast hit bug!");
         Destroy(bugObject);
+        audioSource.PlayOneShot(bugSavedAudioClip);
+        StartCoroutine(ShowImage(bugCaughtImage, 2.5f));
+        
+    }
+
+    private IEnumerator ShowImage(Image image, float seconds)
+    {
+        image.enabled = true;
+        yield return new WaitForSeconds(seconds);
+        image.enabled = false;
     }
 
     void Update()

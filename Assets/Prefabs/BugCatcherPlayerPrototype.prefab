@@ -109,6 +109,9 @@ MonoBehaviour:
   moveSpeed: 5
   lookSensitivity: 0.1
   cameraTransform: {fileID: 606848921749134901}
+  bugCaughtImage: {fileID: 0}
+  audioSource: {fileID: 0}
+  bugSavedAudioClip: {fileID: 8300000, guid: 7295414bb492b2b4d834385dda397f25, type: 3}
 --- !u!136 &4775292448429329751
 CapsuleCollider:
   m_ObjectHideFlags: 0
