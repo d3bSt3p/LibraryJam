@@ -371,6 +371,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BugCatcherPlayerPrototype
       objectReference: {fileID: 0}
+    - target: {fileID: 4775292448429329751, guid: 6e5653ada61af8b4087b21f4e9f114eb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6023846223453988969, guid: 6e5653ada61af8b4087b21f4e9f114eb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -410,18 +414,6 @@ PrefabInstance:
     - target: {fileID: 6023846223453988969, guid: 6e5653ada61af8b4087b21f4e9f114eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6230090513398930967, guid: 6e5653ada61af8b4087b21f4e9f114eb, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 488c61edd372fc749bb42435ba3015f7, type: 2}
-    - target: {fileID: 8740292423080130345, guid: 6e5653ada61af8b4087b21f4e9f114eb, type: 3}
-      propertyPath: m_Dithering
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8740292423080130345, guid: 6e5653ada61af8b4087b21f4e9f114eb, type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

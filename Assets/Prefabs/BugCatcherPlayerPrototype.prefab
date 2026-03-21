@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 6023846223453988969}
   - component: {fileID: 5623189771140920079}
   - component: {fileID: 6230090513398930967}
-  - component: {fileID: 4867767304753624423}
+  - component: {fileID: 4986659332450687155}
   - component: {fileID: 4775292448429329751}
   - component: {fileID: 5357260982359881435}
-  - component: {fileID: 6145463410056932194}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BugCatcherPlayerPrototype
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 488c61edd372fc749bb42435ba3015f7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,7 +94,7 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4867767304753624423
+--- !u!114 &4986659332450687155
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,9 +103,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3018461195588862848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55919ac34a26952479f3fc91f777b2fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 426ed384277c26344b1215e513ad6998, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StarterAssets.FirstPersonController
+  m_EditorClassIdentifier: Assembly-CSharp::BugCatcherPlayerController
   moveSpeed: 5
   lookSensitivity: 0.1
   cameraTransform: {fileID: 606848921749134901}
@@ -158,36 +157,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6145463410056932194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3018461195588862848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: 061df449f68b9204a875fc7913f64b56, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &6651106412714555255
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +169,7 @@ GameObject:
   - component: {fileID: 4216812606325030737}
   - component: {fileID: 1979138255539975340}
   - component: {fileID: 8740292423080130345}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -304,7 +273,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
