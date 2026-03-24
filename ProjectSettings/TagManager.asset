@@ -3,12 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - FreeBug
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
@@ -38,12 +39,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: UI
-    uniqueID: 168513977
-    locked: 0
-  - name: Hand Items
-    uniqueID: 2044543979
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
