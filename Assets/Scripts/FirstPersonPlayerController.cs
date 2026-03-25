@@ -38,8 +38,11 @@ public class FirstPersonController : MonoBehaviour
     public GameObject crosshairObject;
 
     // Internal Variables
-    private float yaw = 0.0f;
     private float pitch = 0.0f;
+    private float mouseX = 0.0f;
+
+    // Camera Look InputAction. Will be populated on Awake()
+    InputAction lookAction;
 
     #region Camera Zoom Variables
 
@@ -143,6 +146,9 @@ public class FirstPersonController : MonoBehaviour
             sprintRemaining = sprintDuration;
             sprintCooldownReset = sprintCooldown;
         }
+
+        // Populate camera input axis
+        lookAction = InputSystem.actions.FindAction("Look");
     }
 
     void Start()
@@ -175,26 +181,19 @@ public class FirstPersonController : MonoBehaviour
     {
         #region Camera
 
-        // Control camera movement
+        // Control camera movement (pitch) and update mouseX
+        // Yaw should be controlled by rigidbody movement in FixedUpdate
+        Vector2 lookInput = lookAction.ReadValue<Vector2>();
         if (cameraCanMove)
         {
-            yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
-
-            if (!invertCamera)
-            {
-                pitch -= mouseSensitivity * Input.GetAxis("Mouse Y");
-            }
-            else
-            {
-                // Inverted Y
-                pitch += mouseSensitivity * Input.GetAxis("Mouse Y");
-            }
-
+            pitch += (invertCamera ? 1 : -1) * mouseSensitivity * lookInput.y;
             // Clamp pitch between lookAngle
             pitch = Mathf.Clamp(pitch, -maxLookAngle, maxLookAngle);
 
-            transform.localEulerAngles = new Vector3(0, yaw, 0);
-            playerCamera.transform.localEulerAngles = new Vector3(pitch, 0, 0);
+            joint.localEulerAngles = new Vector3(pitch, joint.localEulerAngles.y, joint.localEulerAngles.z);
+
+            // Capture horizontal mouse movement
+            transform.Rotate(Vector3.up * (mouseSensitivity * lookInput.x));
         }
 
         #region Camera Zoom
