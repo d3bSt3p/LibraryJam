@@ -45,6 +45,9 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private GameObject JarPrefab;
     [SerializeField] private GameObject BookPrefab;
     [SerializeField] private GameObject MagnifyingGlassPrefab;
+    
+    [Header("Components")]
+    [SerializeField] private BugCatcher bugCatcher;
 
     // ── Private helpers ──────────────────────────────────────────────────────
     private Dictionary<ItemType, GameObject> _heldItemObjects;
@@ -189,8 +192,20 @@ public class PlayerInventory : MonoBehaviour
         // Show selected
         if (inventoryList.Count > 0)
         {
-            GameObject go = _heldItemObjects[inventoryList[selectedItem]];
+            ItemType currentItem = inventoryList[selectedItem];
+
+            GameObject go = _heldItemObjects[currentItem];
             if (go != null) go.SetActive(true);
+
+            // Enable BugCatcher only when Net is equipped
+            if (bugCatcher != null)
+                bugCatcher.enabled = currentItem == ItemType.Net;
+        }
+        else
+        {
+            // No items in inventory, disable BugCatcher
+            if (bugCatcher != null)
+                bugCatcher.enabled = false;
         }
     }
 }

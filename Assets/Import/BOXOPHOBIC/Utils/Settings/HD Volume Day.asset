@@ -302,18 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
   m_Name: HD Volume Day
   m_EditorClassIdentifier: 
-  components:
-  - {fileID: 8711377374188185572}
-  - {fileID: 396278178000043239}
-  - {fileID: -2109818796249167647}
-  - {fileID: 7601098045396302194}
-  - {fileID: 1514152091249096790}
-  - {fileID: 8360019280306604883}
-  - {fileID: -1267043940947446326}
-  - {fileID: -7925493555633639246}
-  - {fileID: -3731284508057267812}
-  - {fileID: -2662620298707306909}
-  - {fileID: 5793971595904047505}
+  components: []
 --- !u!114 &396278178000043239
 MonoBehaviour:
   m_ObjectHideFlags: 3

@@ -16,12 +16,16 @@ public class PauseManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(!paused)
+            if (!paused)
+            {
                 PauseGame();
-            else 
+                paused = true;
+            }
+            else
+            {
                 ResumeGame();
-
-            paused = !paused;
+                paused = false;
+            }
         }
     }
 
@@ -39,8 +43,7 @@ public class PauseManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        paused = false;
-
+        Debug.Log("RESUME");
         controller.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -53,8 +56,8 @@ public class PauseManager : MonoBehaviour
     {
         string currentScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentScene);
-        ResumeGame();
         paused = false;
+        ResumeGame();
     }
 
     public void ReturnToMainMenu()
