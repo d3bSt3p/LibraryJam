@@ -14,18 +14,12 @@ public class PauseManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (!paused)
-            {
                 PauseGame();
-                paused = true;
-            }
             else
-            {
                 ResumeGame();
-                paused = false;
-            }
         }
     }
 
@@ -33,37 +27,45 @@ public class PauseManager : MonoBehaviour
     {
         Debug.Log("PAUSE");
 
+        paused = true;
+        Time.timeScale = 0f;
+
         controller.enabled = false;
         Cursor.lockState = CursorLockMode.None;
-        
-        Time.timeScale = 0f;
         Cursor.visible = true;
         PauseMenu.SetActive(true);
+
+        OnPause.Invoke();
     }
 
     public void ResumeGame()
     {
         Debug.Log("RESUME");
+
+        paused = false;
+        Time.timeScale = 1f;
+
         controller.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
-
-        Time.timeScale = 1f;
         Cursor.visible = false;
         PauseMenu.SetActive(false);
+
+        OnResume.Invoke();
     }
 
     public void Restart()
     {
-        string currentScene = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentScene);
         paused = false;
-        ResumeGame();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ReturnToMainMenu()
     {
         paused = false;
+        Time.timeScale = 1f;
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         SceneManager.LoadScene("Main Menu");
     }
 }
