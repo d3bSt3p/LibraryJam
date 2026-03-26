@@ -4,7 +4,7 @@
 /// part of the inventory system, which is based on the tutorial from Freedom Coding linked below, but modified to fit our needs
 /// https://www.youtube.com/watch?v=HGol5qhqjOE
 /// </summary>
-public enum ItemType { Net, Jar, Book, MagnifyingGlass }
+public enum ItemType { Net, Jar, Book, Hand }
 
 [CreateAssetMenu(fileName = "Item", menuName = "Scriptable Objects/Item")]
 public class ItemSO : ScriptableObject

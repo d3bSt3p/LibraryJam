@@ -24,6 +24,7 @@ public class PlayerInventory : MonoBehaviour
     [Header("Input")]
     [SerializeField] private KeyCode pickUpItemKey = KeyCode.E;
     [SerializeField] private KeyCode throwItemKey = KeyCode.Q;
+    [SerializeField] private bool canDropItems = true;
 
     [Header("UI")]
     [SerializeField] private GameObject pressToPickupUI;
@@ -38,13 +39,13 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private GameObject NetItem;
     [SerializeField] private GameObject JarItem;
     [SerializeField] private GameObject BookItem;
-    [SerializeField] private GameObject MagnifyingGlassItem;
+    [SerializeField] private GameObject HandItem;
 
     [Header("Weapon Prefabs (spawned when thrown)")]
     [SerializeField] private GameObject NetPrefab;
     [SerializeField] private GameObject JarPrefab;
     [SerializeField] private GameObject BookPrefab;
-    [SerializeField] private GameObject MagnifyingGlassPrefab;
+    [SerializeField] private GameObject HandPrefab;
     
     [Header("Components")]
     [SerializeField] private BugCatcher bugCatcher;
@@ -64,7 +65,7 @@ public class PlayerInventory : MonoBehaviour
             { ItemType.Net,  NetItem  },
             { ItemType.Jar, JarItem },
             { ItemType.Book,    BookItem    },
-            { ItemType.MagnifyingGlass,    MagnifyingGlassItem    },
+            { ItemType.Hand,    HandItem    },
         };
 
         _itemPrefabs = new Dictionary<ItemType, GameObject>
@@ -72,7 +73,7 @@ public class PlayerInventory : MonoBehaviour
             { ItemType.Net,  NetPrefab  },
             { ItemType.Jar, JarPrefab },
             { ItemType.Book,    BookPrefab    },
-            { ItemType.MagnifyingGlass,    MagnifyingGlassPrefab    },
+            { ItemType.Hand,    HandPrefab    },
         };
 
         RefreshHeldItem();
@@ -104,6 +105,7 @@ public class PlayerInventory : MonoBehaviour
     // ── Throw ────────────────────────────────────────────────────────────────
     private void HandleThrow()
     {
+        if (!canDropItems) return;
         if (!Input.GetKeyDown(throwItemKey)) return;
         if (inventoryList.Count <= 1) return; // keep at least one item
 
