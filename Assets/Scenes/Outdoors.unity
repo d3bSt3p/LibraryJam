@@ -3935,7 +3935,7 @@ MonoBehaviour:
   displayDuration: 2.5
   jarController: {fileID: 1408526489}
   audioSource: {fileID: 6485530667482617570}
-  bugSavedAudioClip: {fileID: 8300000, guid: 7295414bb492b2b4d834385dda397f25, type: 3}
+  bugSavedAudioClip: {fileID: 8300000, guid: d8a6ef450d5fc8543893488a03a9f282, type: 3}
 --- !u!1 &6485530668049582790
 GameObject:
   m_ObjectHideFlags: 0
