@@ -12,5 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7843c0251fe46a68945c6eee5f75c37, type: 3}
   m_Name: blueSwallowtail
   m_EditorClassIdentifier: Assembly-CSharp::BugDataSO
-  bugName: BlueSwallowtail
+  bugName: Blue Swallowtail
+  bugScientificName: Battus philenor
+  bugFact: Larvae gather aristolochic acids from their host plants in the Aristolochiaceae
+    family. The acids are passed onto the next generation and render them uneatable
+    to some birds. Adults can survive getting caught due to their tough bodies.
+  amountCaught: 4
+  catchGoal: 4
   catchImage: {fileID: 21300000, guid: c5f3ef7fc53d13044b3dddc2681a170b, type: 3}
+  inspectPrefab: {fileID: 499843245649390158, guid: eb7dbf82575302f409550f4f11039113, type: 3}

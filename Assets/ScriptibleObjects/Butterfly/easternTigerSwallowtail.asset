@@ -12,5 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7843c0251fe46a68945c6eee5f75c37, type: 3}
   m_Name: easternTigerSwallowtail
   m_EditorClassIdentifier: Assembly-CSharp::BugDataSO
-  bugName: EasternTigerSwallowtail
+  bugName: Eastern Tiger Swallowtail
+  bugScientificName: Papilio glaucus
+  bugFact: 'Males are usually yellow with black tiger stripes, while females can
+    range from yellow to a blue-black hue. If a female is darker in color, their
+    stripes are still faintly visible on the undersides of their front wings. '
+  amountCaught: 0
+  catchGoal: 4
   catchImage: {fileID: 21300000, guid: ff1016c8e66531947bda1c0e017b135f, type: 3}
+  inspectPrefab: {fileID: 5765626245916656319, guid: 4a5462b738becf74daaeb0f2908407f0, type: 3}

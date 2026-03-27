@@ -12,5 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7843c0251fe46a68945c6eee5f75c37, type: 3}
   m_Name: oldWorldSwallowtail
   m_EditorClassIdentifier: Assembly-CSharp::BugDataSO
-  bugName: OldWorldSwallowtail
+  bugName: Old World Swallowtail
+  bugScientificName: Papilio machaon
+  bugFact: 'Old World Swallowtails have a vast altitude range, going from sea level
+    to up to 16,000 ft. They can be found in the highest altitudes of the Himalayas
+    and the mountains of Yemen. '
+  amountCaught: 0
+  catchGoal: 4
   catchImage: {fileID: 21300000, guid: 79f820f6d9c4ae94cb46c6ce48434410, type: 3}
+  inspectPrefab: {fileID: 2157313973987692162, guid: 72e4c9416113fb64a81b4abb89a6bead, type: 3}

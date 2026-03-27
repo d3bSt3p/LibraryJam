@@ -1,35 +1,43 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class JarController : MonoBehaviour
 {
     [Header("Butterfly Settings")]
     [SerializeField] GameObject jarButterflyPrefab;
-    [SerializeField] int jarCapacity = 10;
 
     [Header("Spawn Area")]
     [SerializeField] RectTransform spawnArea;
 
-    private int _currentCount = 0;
-
-    public bool IsFull => _currentCount >= jarCapacity;
-
-    public bool AddButterfly(BugDataSO bugData)
+    // ── Lifecycle ────────────────────────────────────────────────────────────
+    private void Start()
     {
-        if (IsFull)
-        {
-            Debug.LogWarning("Jar is full!");
-            return false;
-        }
+        if (BugJar.Instance == null) return;
 
+        foreach (BugDataSO bugData in BugJar.Instance.StoredBugs)
+            SpawnButterflyVisual(bugData);
+        //Debug.Log($"JarController: Spawned visuals for {BugJar.Instance.Count} stored bugs.");
+    }
+
+    // ── Public API ───────────────────────────────────────────────────────────
+
+    /// <summary>Spawns a visual butterfly in the jar UI. Call after BugJar.TryAddBug succeeds.</summary>
+    public void SpawnButterflyVisual(BugDataSO bugData)
+    {
         Vector2 spawnPos = GetRandomPositionInSpawnArea();
 
         GameObject butterfly = Instantiate(jarButterflyPrefab, spawnArea);
         butterfly.GetComponent<RectTransform>().anchoredPosition = spawnPos;
         butterfly.GetComponent<JarButterfly>()?.Initialise(bugData, spawnArea);
+    }
 
-        _currentCount++;
-        return true;
+    /// <summary>Destroys all butterfly visuals in the jar and clears the BugJar data.</summary>
+    public void ClearJar()
+    {
+        foreach (Transform child in spawnArea)
+            Destroy(child.gameObject);
+
+        BugJar.Instance?.ClearJar();
     }
 
     public Vector2 GetRandomPositionInSpawnArea()
