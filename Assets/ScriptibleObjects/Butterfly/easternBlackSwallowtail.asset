@@ -18,7 +18,7 @@ MonoBehaviour:
     Spicebush Swallowtails. They mimic the appearance of Pipevine Swallowtails with
     the underside of their wings. This is used to confuse predators into making them
     think they\u2019re poisonous. "
-  amountCaught: 1
+  amountCaught: 0
   catchGoal: 4
   catchImage: {fileID: 21300000, guid: 2577f85b34c8a1f48bdcee1d8cf3caac, type: 3}
   inspectPrefab: {fileID: 121337640301906829, guid: 60699e8860a24ba439f4e6afa1ae2bfc, type: 3}
