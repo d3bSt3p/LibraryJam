@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2383695361231822072
+--- !u!1 &354783856961650228
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,65 +8,65 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6330847251458227228}
-  - component: {fileID: 6216379660937844821}
-  - component: {fileID: 859005767595531832}
-  - component: {fileID: 6960619264219636836}
-  m_Layer: 0
-  m_Name: book
+  - component: {fileID: 284893220436349849}
+  - component: {fileID: 3912685415292461526}
+  - component: {fileID: 7565486928881077233}
+  - component: {fileID: 5901109154996956344}
+  m_Layer: 5
+  m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!224 &6330847251458227228
+--- !u!224 &284893220436349849
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2383695361231822072}
+  m_GameObject: {fileID: 354783856961650228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.74, y: 2.74, z: 2.74}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
+  m_SizeDelta: {x: 2.56, y: 2.56}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6216379660937844821
+--- !u!114 &3912685415292461526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2383695361231822072}
+  m_GameObject: {fileID: 354783856961650228}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 031e27b43a2f461f82c813956bb1c791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemScriptableObject: {fileID: 11400000, guid: 40f3bca49a3dcdc4aa1b0e0f5643ac53, type: 2}
---- !u!222 &859005767595531832
+  itemScriptableObject: {fileID: 11400000, guid: 86fa1d2f9fd6962438c583f6cc0c4771, type: 2}
+--- !u!222 &7565486928881077233
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2383695361231822072}
+  m_GameObject: {fileID: 354783856961650228}
   m_CullTransparentMesh: 1
---- !u!114 &6960619264219636836
+--- !u!114 &5901109154996956344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2383695361231822072}
-  m_Enabled: 1
+  m_GameObject: {fileID: 354783856961650228}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 484ef971f78c79c4eb70adb5ff485001, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d21e6c13b40d549488d43541cee3309f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
