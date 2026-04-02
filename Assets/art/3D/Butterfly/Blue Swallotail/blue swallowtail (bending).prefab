@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7698225253210395704}
   - component: {fileID: 8811525395662199343}
   m_Layer: 0
-  m_Name: blue swallowtail
+  m_Name: blue swallowtail (bending)
   m_TagString: FreeBug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -247,7 +247,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ecc708481c8b8aa459f0a6be5d04189e, type: 2}
+  - {fileID: 2100000, guid: 7967655fc6f844942ac2213daf2a64ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -350,7 +350,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 20cfa223a4f30e04cb445845caa95365, type: 2}
+  - {fileID: 2100000, guid: 76c18d36f4dbbd342b9e7b5fffea5702, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

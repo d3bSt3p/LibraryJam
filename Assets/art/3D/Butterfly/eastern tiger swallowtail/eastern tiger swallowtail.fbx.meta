@@ -3,7 +3,17 @@ guid: 5abff0b4ccc496d4d8d1891c93062845
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body
+    second: {fileID: 2100000, guid: 10f48d6425be63c4faa8699c02a6a43d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eastern tiger swallowtail
+    second: {fileID: 2100000, guid: 76c18d36f4dbbd342b9e7b5fffea5702, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
